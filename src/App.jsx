@@ -5,7 +5,7 @@ import Update from './components/Update'
 import Aboutus from './components/Aboutus'
 import Contact from './components/Contact'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Product from './components/Product'
+import Product from './components/Vehicle'
 import Turnover from './components/Turnover'
 import Employee from './components/Employee'
 import AddData1 from './components/AddData1'
@@ -29,11 +29,6 @@ const App = () => {
           <Route path='/AddData1' element={<AddData1 />}></Route>
           <Route path="/update1/:id" element={<Update1 />} />
           <Route path="/report" element={<Report />} />
-
-          
-
-           
-           
 
         </Routes>
       </BrowserRouter>
