@@ -5,21 +5,22 @@ import axios from 'axios'
 const Update1 = () => {
     const {id} = useParams();
     const navigate = useNavigate();
-
-    const [employeeId, setEmployeeId] = useState("")
-    const [name, setName] = useState("")
-    const [salary, setSalary] = useState("")
-    const [yearly_salary, setYearlySalary] = useState("")
+    const [en, setEn] = useState("")
+    const [ename, setEname] = useState("")
+    const [mearnings, setMearnings] = useState("")
+    const [yearnings, setYearnings] = useState("")
+    const [type, setType] = useState("")
     
 
     useEffect(() => { 
         axios.post("http://localhost:3001/getUpdateData1", {id}) 
             .then(
                 (response) => {
-                    setEmployeeId(response.data.employee_id);
-                    setName(response.data.employee_name);
-                    setSalary(response.data.employee_salary);
-                    setYearlySalary(response.data.yearly_salary);
+                    setEn(response.data.en);
+                    setEname(response.data.ename);
+                    setMearnings(response.data.mearnings);
+                    setYearnings(response.data.yearnings);
+                    setType(response.data.type);
                       
                 })
             .catch(
@@ -29,10 +30,10 @@ const Update1 = () => {
             const handleSubmit = (e) =>{
                 e.preventDefault();
                 try {
-                    axios.post("http://localhost:3001/update1", {id, employeeId, name, salary,yearly_salary})
+                    axios.post("http://localhost:3001/update1", {id, en, ename, mearnings, yearnings, type})
                     .then ((response)=>{
                         console.log(response);
-                        navigate('/');
+                        navigate('/Employee');
                     })
                     .catch((err) => {console.log(err) })
                 }catch(err) {
@@ -43,11 +44,11 @@ const Update1 = () => {
   return (
     <div>
         <form onSubmit={handleSubmit}>
-        <input placeholder='Enter Employee id' type = 'text' name = 'id' value={id} onChange = {(e) =>setEmployeeId(e.target.value)}  required />
-        <input placeholder='Enter Employee Name' type = 'text' name = 'name' value={name} onChange = {(e) =>setName(e.target.value)} required />
-        <input placeholder='Employee Salary' type = 'number' name = 'salary' value={salary} onChange = {(e) =>setSalary(e.target.value)} required />
-        <input placeholder='Employee Salary' type = 'number' name = 'salary' value={yearly_salary} onChange = {(e) =>setYearlySalary(e.target.value)} required />
-         
+        <input placeholder='Enter Employee number' type = 'text' name = 'en' value={en} onChange = {(e) =>setEn(e.target.value)}  required />
+        <input placeholder='Enter Employee Name' type = 'text' name = 'name' value={ename} onChange = {(e) =>setEname(e.target.value)} required />
+        <input placeholder='Employee Earnings' type = 'number' name = 'salary' value={mearnings} onChange = {(e) =>setMearnings(e.target.value)} required />
+        <input placeholder='Employee yearly earnings' type = 'number' name = 'salary' value={yearnings} onChange = {(e) =>setYearnings(e.target.value)} required />
+        <input placeholder='Employee type' type = 'text' name = 'type' value={type} onChange = {(e) =>setType(e.target.value)} required />
         <input type = 'submit' value = "submit"/>
     </form>
     </div>

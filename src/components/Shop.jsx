@@ -23,16 +23,15 @@ const Shop = () => {
 
   return (
     <>
-
-    <center><h1>Turn over Report</h1>
+    <center><h1 className='heading'>XYZ Pvt. ltd.</h1>
    
     <button onClick={()=>{navigate("/Aboutus")}}>Aboutus</button>
     <button onClick={()=>{navigate("/Product")}}>Product</button>
     <button onClick={()=>{navigate("/Contact")}}>Contact</button>
     <button onClick={()=>{navigate("/Report")}}>Report</button>
-    <button onClick={updateAllData}>Update Records</button>
+    {/* <button onClick={updateAllData}>Update Records</button> */}
 
-  <img className='imgE' src="https://static.vecteezy.com/system/resources/thumbnails/022/575/456/small_2x/chamomile-flower-field-camomile-in-the-nature-field-of-camomiles-at-sunny-day-at-nature-camomile-daisy-flowers-in-summer-day-chamomile-flowers-field-wide-background-in-sun-light-generative-ai-photo.jpg" width="1600" height="700" alt="" />
+  <img className='imgE' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPSmvbBhLMFNSIGxOVguxfNL0PeHj5PzM_aNA-NYf31jaXXTHi3wCaPO5jlOV-UYczSSU&usqp=CAU" width="1200" height="500" alt="" />
 
     </center>
     

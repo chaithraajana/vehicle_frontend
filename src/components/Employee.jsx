@@ -7,8 +7,8 @@ const Employee = () => {
     const navigate = useNavigate();
     const [employee, setEmployee] = useState([]);
 
-    var mtotalsalary = 0;
-    var ytotalsalary = 0;
+    var mtotalearnings = 0;
+    var ytotalearnings = 0;
     var totalEmployees =0;
     var tax = 0;
     var insurance = 0;
@@ -35,42 +35,42 @@ const Employee = () => {
   return (
     <>
 
-    <center><h1>Report of Anual Employee Expenses of ABCD Pvt.ltd</h1>
+    <center><h1>Employee Report of Xyz Pvt.ltd</h1>
     
     </center>
     <div className='header'>
     
         <div>id</div>
-        <div>Employee Id</div>
-        <div>name</div>
-        <div>salary</div>
-        <div>yearly-salary</div>
-        <div>tax</div>
-        <div>insurance</div>
-        <div>hra</div>
-
-        
-         
+        <div>E.Number</div>
+        <div>Name</div>
+        <div>M.earnings</div>
+        <div>Y.earnings</div>
+        <div>Type</div>
+        <div>Tax</div>
+        <div>Insurance</div>
+        <div>Hra</div>
+    
     </div>
     
     
     {employee.map(
     (employee) => {
-        mtotalsalary = mtotalsalary + employee.employee_salary;
-        ytotalsalary = ytotalsalary + employee.employee_salary * 12;
+        mtotalearnings = mtotalearnings + employee.mearnings;
+        ytotalearnings = ytotalearnings + employee.yearnings * 12;
         totalEmployees++;
-        tax = ytotalsalary *0.2;
-        insurance = ytotalsalary * 0.05;
-        hra = ytotalsalary * 0.3;
+        tax = mtotalearnings *0.2;
+        insurance = mtotalearnings * 0.05;
+        hra = mtotalearnings * 0.3;
 
     return(
         <Employeelist
     key={employee.id}
     id={employee.id}
-    employee_id={employee.employee_id}
-    name={employee.employee_name}
-    employee_salary={employee.employee_salary}
-    yearly_salary={employee.employee_salary * 12}
+    en={employee.en}
+    ename={employee.ename}
+    mearnings={employee.mearnings}
+   yearnings={employee.yearnings * 12}
+    type={employee.type}
     tax={tax}
     insurance={insurance}
     hra = {hra}
@@ -81,13 +81,13 @@ const Employee = () => {
     )
     }
     <div className='student_output'>
-    <div>Total number employee{totalEmployees}</div>
-    <div>Total monthly salary{ mtotalsalary}</div>
-    <div>Total yearly salary{ytotalsalary}</div>
+    <div>Total number employee = {totalEmployees}</div>
+    <div>Total monthly salary = { mtotalearnings}</div>
+    <div>Total yearly salary = {ytotalearnings}</div>
     </div>
 
-    <button onClick={()=>{navigate("/AddData1")}}>Add Data1</button>
-    <button onClick={()=>{navigate("/")}}>Go Back</button>
+    <button onClick={()=>{navigate("/AddData1")}}>Add Data</button>
+    <button onClick={()=>{navigate("/Report")}}>Go Back</button>
     </>
   )
 }

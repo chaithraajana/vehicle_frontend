@@ -41,7 +41,7 @@ const Turnover = () => {
   return (
     <>
 
-    <center><h1>Turn over Report</h1></center>
+    <center><h1>XYZ Pvt.ltd. Report</h1></center>
     <div className='employeeList'>
      <div className='employeeData'>
         <div id='id1'>id</div>

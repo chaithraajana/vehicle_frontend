@@ -2,17 +2,16 @@ import React from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const Employeelist = (props) => {
+const Vehicletransportlist = (props) => {
     const navigate = useNavigate();
 
-    const {id, en, ename, mearnings, type, tax, insurance, hra} = props
-    var yearnings = mearnings * 12;
-
+    const {id, vname, vnumber, vmodel, ipremium, servicecharge, emmission} = props
+    
 
     const handleDelete = () => {
         const id= props.id;
         try {
-            axios.post("http://localhost:3001/delete1", {id})
+            axios.post("http://localhost:3001/deletev", {id})
             .then(response => {console.log(response) })
                 .catch((err) => {console.log(err)})
             
@@ -23,19 +22,18 @@ const Employeelist = (props) => {
   return (
     <div className='employeeData'>
     <div>{id}</div>
-    <div>{en}</div>
-    <div>{ename}</div>
-    <div>{mearnings}</div>
-    <div>{yearnings}</div>
-    <div>{type}</div>
-    <div>{tax}</div>
-    <div>{insurance}</div>
-    <div>{hra}</div>
+    <div>{vname}</div>
+    <div>{vnumber}</div>
+    <div>{vmodel}</div>
+    <div>{ipremium}</div>
+    <div>{servicecharge}</div>
+    <div>{emmission}</div>
+     
 
     <button onClick={handleDelete}>Delete</button>
-    <button onClick={() => {navigate(`/update1/${id}`)}}>Update</button>
+    <button onClick={() => {navigate(`/updatev/${id}`)}}>Update</button>
     </div>
   )
 }
 
-export default Employeelist;
+export default Vehicletransportlist;

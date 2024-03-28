@@ -7,8 +7,11 @@ const Report = () => {
 
   return (
     <>
-    <button onClick={()=>{navigate("/Turnover")}}>Turnover Report</button>
+    <button onClick={()=>{navigate("/Transport")}}>Turnover Report</button>
     <button onClick={()=>{navigate("/Employee")}}>Employee Report</button>
+    <button onClick={()=>{navigate("/Vehicletransport")}}>Vehicle Report</button>
+    <button onClick={()=>{navigate("/")}}>Go Back</button>
+
     </>
   )
 }
